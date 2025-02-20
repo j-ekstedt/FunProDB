@@ -96,6 +96,7 @@ public class MovieUtil {
 
     Long uniqueLanguages(List<Movie> movies) {
         return movies.stream()
+                .filter(movie -> movie.getYear() == 1975)
                 .flatMap(l->l.getLanguages().stream())
                 .distinct()
                 .count();
